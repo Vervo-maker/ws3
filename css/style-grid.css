@@ -1,0 +1,176 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f0f0f0;
+    margin: 0;
+}
+
+/* Контейнер на весь екран */
+.container {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 100px auto 80px 100px;
+    gap: 15px;
+    grid-template-areas:
+        "header header header"
+        "left   center right"
+        "left   bottom right"
+        "footer footer right";
+}
+
+/* БЛОК 1 (header) */
+.header {
+    grid-area: header;
+    background: #cfe0f5;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 50px;
+    text-align: left;
+    font-size: 28px;
+}
+
+/* БЛОК 6 (footer) */
+.footer {
+    grid-area: footer;
+    background: #cfe0f5;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 50px;
+    text-align: left;
+    font-size: 20px;
+}
+
+/* БЛОК 2 (left) — меню по центру */
+.left {
+    grid-area: left;
+    background: #f8e3d0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* БЛОК 3 (center) — основний контент */
+.center {
+    grid-area: center;
+    background: #ffffff;
+    text-align: left;
+    padding: 30px;
+    display: flex;
+    align-items: center;           /* вертикально по центру блоку */
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+/* НОВЕ: заголовки по центру, текст і списки — зліва */
+.center h1,
+.center h2,
+.center h3,
+.center h4 {
+    text-align: center;
+    width: 100%;
+    margin: 15px 0;
+    color: #333;
+}
+
+.center p,
+.center ul,
+.center ol {
+    text-align: left;
+    width: 100%;
+    max-width: 800px;   /* щоб текст не розтягувався на дуже широких екранах */
+}
+
+/* Особливо для 4-ї сторінки: зображення з image map */
+.center img {
+    max-width: 100%;
+    height: auto;               /* зберігає пропорції */
+    display: block;
+    margin: 20px auto;          /* по центру горизонтально */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* БЛОК 4 (right) */
+.right {
+    grid-area: right;
+    background: #f8e3d0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 25px;
+}
+
+/* БЛОК 5 (bottom) */
+.bottom {
+    grid-area: bottom;
+    background: #dff0d8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.bottom img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Загальні стилі */
+.block {
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Меню */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin-bottom: 12px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    display: block;
+    padding: 12px 20px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.7);
+    transition: all 0.3s;
+    text-align: center;
+}
+
+nav ul li a:hover {
+    background: #ffffff;
+    color: #0066cc;
+    transform: translateX(5px);
+}
+
+/* Без крапок у списках */
+ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 15px 0;
+}
