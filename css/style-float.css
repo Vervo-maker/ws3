@@ -1,0 +1,158 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f0f0f0;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.header {
+    background: #cfe0f5;
+    height: 100px;
+    padding-left: 50px;
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+}
+
+.main-wrapper {
+    position: relative; 
+    min-height: 600px;  
+    margin-bottom: 15px;
+}
+
+.left, .center, .right {
+    float: left;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.left {
+    width: 25%;
+    background: #f8e3d0;
+    min-height: 600px; 
+    padding: 20px;
+    text-align: center;
+}
+
+.center {
+    width: 50%;
+    background: #ffffff;
+    padding: 30px 30px 100px 30px;
+    min-height: 500px;
+}
+
+.right {
+    width: 25%;
+    background: #f8e3d0;
+    min-height: 600px; 
+    padding: 25px;
+    text-align: center;
+}
+
+.bottom {
+    position: absolute;
+    bottom: 0;                 
+    left: 25%;                  
+    width: 50%;                 
+    height: 80px;
+    background: #dff0d8;
+    border-radius: 0 0 10px 10px; /* заокруглення */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottom img {
+    max-width: 90%;
+    max-height: 70px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.footer {
+    clear: both;
+    background: #cfe0f5;
+    height: 100px;
+    padding-left: 50px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    width: 75%;                 /*розташування під 2 і 5*/
+}
+
+.block {
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Контент у центрі */
+.center h1, .center h2, .center h3 {
+    text-align: center;
+    margin: 15px 0;
+}
+
+.center p, .center ul {
+    max-width: 800px;
+    margin: 15px auto;
+    line-height: 1.7;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    margin-bottom: 12px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    display: block;
+    padding: 12px 20px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.7);
+    transition: all 0.3s;
+    text-align: center;
+}
+
+nav ul li a:hover {
+    background: #ffffff;
+    color: #0066cc;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,102,204,0.2);
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 15px 0;
+}
+
+@media (max-width: 768px) {
+    .container {
+        min-height: 100vh;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "header"
+            "left"
+            "center"
+            "right"
+            "bottom"
+            "footer";
+    }
+}
