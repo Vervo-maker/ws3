@@ -1,0 +1,126 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f0f0f0;
+}
+
+.container {
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.header {
+    background: #cfe0f5;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+    font-size: 28px;
+}
+
+/* центральна частина */
+.main-wrapper {
+    display: flex;
+    gap: 15px;
+    flex: 1;
+}
+
+.left,
+.right {
+    width: 25%;
+    background: #f8e3d0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* центральна колонка */
+.center-wrapper {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.center {
+    background: #fff;
+    padding: 30px;
+    flex: 1;
+}
+
+.bottom {
+    background: #dff0d8;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottom {
+    height: 80px;
+}
+
+.bottom img {
+    max-width: 90%;
+    max-height: 60px;
+    object-fit: contain;
+}
+
+
+.footer {
+    background: #cfe0f5;
+    height: 100px;
+    width: 75%;
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+    font-size: 20px;
+}
+
+/* загальні стилі */
+.block {
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.center img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* стилі для контенту */
+.center h1,.center h2,.center h3,.center h4 { text-align: center; width: 100%; margin: 15px 0; }
+.center p,.center ul,.center ol { max-width: 800px; width: 100%; margin: 15px 0; }
+.center img { max-width: 100%; height: auto; display: block; margin: 20px auto; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+nav ul { list-style: none; }
+nav ul li { margin-bottom: 12px; }
+nav ul li a { /* стиль, як у grid */ 
+    text-decoration: none; color: #333; font-weight: bold; display: block; padding: 12px 20px; border-radius: 8px; background: rgba(255,255,255,0.7); transition: all 0.3s; text-align: center;
+}
+nav ul li a:hover { background: #ffffff; color: #0066cc; transform: translateX(5px); }
+ul { list-style: none; padding-left: 0; margin: 15px 0; }
+
+@media (max-width: 768px) {
+    .container {
+        min-height: 100vh;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "header"
+            "left"
+            "center"
+            "right"
+            "bottom"
+            "footer";
+    }
+}
